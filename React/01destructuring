@@ -1,0 +1,22 @@
+React 구조분해 - Destructuring
+
+Dont forget '{}'- function Pizza({ pizzaObj }) correct , function Pizza( pizzaObj ) wrong. 
+
+
+function Pizza({ pizzaObj }) {
+  if (pizzaObj.soldOut) return `Sorry the ${pizzaObj.name} is sold oout`;
+
+  return (
+    <li className="pizza">
+      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
+      <div>
+        <h3>
+          {pizzaObj.name} £{pizzaObj.price}
+        </h3>
+        <p>{pizzaObj.ingredients}</p>;
+      </div>
+    </li>
+  );
+}
+
+
