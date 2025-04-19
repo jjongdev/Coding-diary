@@ -1,0 +1,8 @@
+기호 | 엔티티 코드 | 결과
+× | &times; | ×
+& | &amp; | &
+< | &lt; | <
+> | &gt; | >
+" | &quot; | "
+
+Entity code in JSX and Javascript
