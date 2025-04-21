@@ -1,0 +1,37 @@
+***/ <button onClick={() => setCbtn((num) => num - btn)}>-</button> /
+num - btn multiply function by passing a variable into a callback
+이게 뭐냐면 위에 클릭을 하면 카운트 숫자가 1씩 증가하는거에 위와 같이 콜백함수를 만들 고 btn 변수를 이 콜백함수 안에 집어넣어서 
+마치 btn * cbtn 이 되는 것처럼 만든 것이다. 
+
+export default function App() {
+  const [btn, setBtn] = useState(0);
+  const [cbtn, setCbtn] = useState(0);
+
+  const date = new Date();
+  date.setDate(date.getDate() + cbtn);
+
+  return (
+    <div className="App">
+      <div>
+        <button onClick={() => setBtn((num) => num - 1)}>-</button>
+        <span>Step: {btn}</span>
+        <button onClick={() => setBtn((num) => num + 1)}>+</button>
+      </div>
+      <div>
+        <button onClick={() => setCbtn((num) => num - btn)}>-</button>
+        <span>Count: {cbtn}</span>
+        <button onClick={() => setCbtn((num) => num + btn)}>+</button>
+      </div>
+      <p>
+        <span>
+          {cbtn === 0
+            ? "Today is "
+            : cbtn > 0
+            ? `${cbtn} days from today is `
+            : `${Math.abs(cbtn)} days ago was `}
+        </span>
+        <span>{date.toDateString()}</span>
+      </p>
+    </div>
+  );
+}
