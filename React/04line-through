@@ -1,0 +1,15 @@
+나중에 해당 아이템이 체크되면 중간 선을 그어서 해당아이템은 완료했다고 표시하는 기능으로 쓸 수 있음. 
+So item.packed is true then put the line-through 
+
+
+function Item({ item }) {
+  return (
+    <li>
+      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+        {item.quantity}
+        {item.description}
+      </span>
+      <button>❌</button>
+    </li>
+  );
+}
