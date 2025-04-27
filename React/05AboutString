@@ -1,0 +1,29 @@
+아래 해당 코드에서 const handleInput = (e) => {
+    setBtn(Number(e.target.value));
+  };
+
+이 부분의 Number를 입력하지 않았다. 그랬더니 변환값이 문자열로 취급되어 2222 혹은 4444뭐 이런식으로 출력되던 것. 
+원인은 input Value 를 숫자로 지정하면 되었던 것. 
+
+export default function App() {
+  const [btn, setBtn] = useState(0);
+  const [cbtn, setCbtn] = useState(0);
+
+  const date = new Date();
+  date.setDate(date.getDate() + cbtn);
+
+  const handleInput = (e) => {
+    setBtn(Number(e.target.value));
+  };
+
+  return (
+    <div className="App">
+      <div>
+        <input
+          type="range"
+          min="0"
+          max="10"
+          value={btn}
+          onChange={handleInput}
+        />
+        <span>{btn}</span>
