@@ -16,7 +16,7 @@ export default function App() {
 }
 
 function NavBar({ children }) {
-  return <nav className="nav-bar"></nav>;
+  return <nav className="nav-bar">{children}</nav>;
 }
 
 // -- without children props 
