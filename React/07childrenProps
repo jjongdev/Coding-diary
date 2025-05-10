@@ -1,0 +1,41 @@
+//--using children props--
+
+export default function App() {
+  const [movies, setMovies] = useState(tempMovieData);
+
+  return (
+    <>
+      <NavBar movies={movies}>
+        <Logo />
+        <Search />
+        <NumResult movies={movies} />
+      </NavBar>
+      <Main movies={movies} />
+    </>
+  );
+}
+
+function NavBar({ children }) {
+  return <nav className="nav-bar"></nav>;
+}
+
+// -- without children props 
+
+export default function App() {
+  const [movies, setMovies] = useState(tempMovieData);
+
+  return (
+    <>
+      <NavBar movies={movies}/>     // <NavBar> using closing tag and locate the components that I want to composit and receive props as children  
+      <Main movies={movies} />
+    </>
+  );
+}
+
+function NavBar({ movies }) {
+  return <nav className="nav-bar">
+    <Logo />
+        <Search />
+        <NumResult movies={movies} />
+</nav>;
+}
