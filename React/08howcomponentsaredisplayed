@@ -1,0 +1,12 @@
+
+1. RENDER IS TRIGGERED - > 2. REDER PHASE -> 3. COMMIT PHASE -> 4. BROWSER PAINT
+
+1. By updating state somewhere 
+2. React calls component functions and figures out how DOM should be updated (Common sense of the word 'render')
+3. React actually writes to the DOM, updating, inserting and deleting elements (Common sense of the word 'render')
+
+
+
+
+* React rendering is NOT updating the DOM or displaying elements on the screens. 
+Rendering only happens internally inside React, it does NOT produce visual changes. 
